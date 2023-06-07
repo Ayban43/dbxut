@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'dbz';
+  src: url('./Saiyan-Sans.ttf') format('truetype');
+  /* Add additional src declarations for different font file formats if needed */
+  /* You can also include font-weight and font-style properties here */
+}

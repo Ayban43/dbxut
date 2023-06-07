@@ -20,19 +20,40 @@ export default function App() {
   const [score, setScore] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [showTitlePage, setShowTitlePage] = useState(true);
+  const [gameStarted, setGameStarted] = useState(false);
   const [time, setTime] = useState(20); // Timer in seconds
 
   useEffect(() => {
     const shuffled = shuffleArray(questionsData);
-    setQuestions(shuffled);
-    setShuffledQuestions(shuffled);
+    const selectedQuestions = shuffled.slice(0, 7); // Select only the first 7 questions
+    setQuestions(selectedQuestions);
+    setShuffledQuestions(selectedQuestions);
   }, []);
 
   useEffect(() => {
-    if (currentQuestion < shuffledQuestions.length) {
+    if (gameStarted) {
+      const timer = setTimeout(() => {
+        if (time === 0) {
+          handleAnswerOptionClick(null, -1); // Automatically select wrong answer
+        } else {
+          setTime(time - 1);
+        }
+      }, 1000);
+
+      return () => clearTimeout(timer); // Cleanup the timer when component unmounts or timer changes
+    }
+  }, [gameStarted, time]);
+
+  const handlePlayClick = () => {
+    setShowTitlePage(false);
+    setGameStarted(true);
+  };
+
+  useEffect(() => {
+    if (currentQuestion < shuffledQuestions.length && gameStarted) {
       setTime(20); // Reset the timer for each question
     }
-  }, [currentQuestion, shuffledQuestions]);
+  }, [currentQuestion, shuffledQuestions, gameStarted]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -46,9 +67,6 @@ export default function App() {
     return () => clearTimeout(timer); // Cleanup the timer when component unmounts or timer changes
   }, [time]);
 
-  const handlePlayClick = () => {
-    setShowTitlePage(false);
-  };
 
   const handleRetryClick = () => {
     setShowScore(false);
@@ -90,7 +108,7 @@ export default function App() {
         {showTitlePage ? (
           <div className='title-page text-center h-screen flex flex-col'>
             <div className="flex-1  flex justify-center items-center">
-              <h1 className='text-9xl font-bold mb-4 mt-44 text-center text-red-900'>Dragon Ball Trivia Game</h1>
+              <h1 className=' font-normal mb-4 mt-44 text-center text-red-900 font-dbz tracking-widest leading-none' style={{ fontSize: '11rem' }}>Dragon Ball <br></br> Trivia Game</h1>
             </div>
             <div className="flex-1 flex flex-col justify-center items-center mb-40">
               <button
@@ -105,18 +123,18 @@ export default function App() {
           <>
             <div className='score-section text-center h-screen grid items-center justify-center'>
               <div>
-                <h2 className='text-8xl font-bold mb-4 text-red-900'>CONGRATULATIONS</h2>
+                <h2 className=' mt-20 text-red-900 font-dbz tex tracking-wide' style={{ fontSize: '10rem' }}>CONGRATULATIONS</h2>
               </div>
-              <div className='grid'>
+              <div className='grid leading-none'>
                 <span className='text-7xl text-orange-500 font-semibold'>SCORE</span>
-                <span className='font-bold text-red-950' style={{ fontSize: '18rem' }}>{score * 10}</span>
+                <span className='font-bold text-red-950 mb-10' style={{ fontSize: '18rem' }}>{score * 10}</span>
                 <p className='text-xl text-gray-700'>
                   (You scored {score} out of {questions.length})
                 </p>
               </div>
               <button
                 onClick={handleRetryClick}
-                className='bg-orange-400 text-white font-bold py-4 px-8 rounded m-1 text-4xl'
+                className='bg-orange-500 text-white font-bold py-4 px-6 rounded m-1 text-4xl mx-80 mb-40'
               >
                 RETRY
               </button>
@@ -128,19 +146,19 @@ export default function App() {
               <div className='flex-col timer justify-start text-4xl mb-20'>
                 Time: {time}s
               </div>
-              <div className='question-text flex justify-between text-7xl items-end text-center text-red-950 tracking-wide font-medium leading-tight'>{questions[currentQuestion].questionText}</div>
+              <div className='question-text flex justify-between text-7xl items-end text-center text-red-950 tracking-tight font-bold leading-tight font-mono'>{questions[currentQuestion].questionText}</div>
               <div className='question-count flex justify-center items-center mt-5 text-xl font-semibold'>
                 <span>(Question {currentQuestion + 1}</span>/{questions.length})
               </div>
             </div>
 
-            <div className='answer-section grid grid-cols-2 gap-10 items-center justify-center flex-1 text-4xl px-36'>
-              <div className='top-buttons grid gap-8'>
+            <div className='answer-section grid grid-cols-2 gap-16 items-center justify-center flex-1 text-4xl px-36'>
+              <div className='top-buttons grid gap-12'>
                 {questions[currentQuestion].answerOptions.slice(0, 2).map((answerOption, index) => (
                   <button
                     key={index}
                     onClick={() => handleAnswerOptionClick(answerOption, index)}
-                    className={`text-white font-bold py-8 px-8 rounded m-1 w-full ${selectedAnswer === index
+                    className={`text-white font-bold py-8 px-8 rounded-full m-1 w-full grid  ${selectedAnswer === index
                       ? answerOption.isCorrect
                         ? 'bg-green-500'
                         : 'bg-red-700'
@@ -149,27 +167,27 @@ export default function App() {
                     disabled={selectedAnswer !== null}
                   >
                     {index === 0 && (
-                      <>
+                      <div className="flex justify-center">
                         <FaStar className="inline pr-2 pb-2 text-red-900" />
-                      </>
+                      </div>
                     )}
                     {index === 1 && (
-                      <>
+                      <div className="flex justify-center">
                         <FaStar className="inline pr-2 pb-2 text-red-900" />
                         <FaStar className="inline pr-2 pb-2 text-red-900" />
                         <FaStar className="inline pr-2 pb-2 text-red-900" />
-                      </>
+                      </div>
                     )}
                     {answerOption.answerText}
                   </button>
                 ))}
               </div>
-              <div className='bottom-buttons grid gap-8'>
+              <div className='bottom-buttons grid gap-12'>
                 {questions[currentQuestion].answerOptions.slice(2).map((answerOption, index) => (
                   <button
                     key={index}
                     onClick={() => handleAnswerOptionClick(answerOption, index + 2)} // Adding an offset of 2 to the index
-                    className={`text-white font-bold py-8 px-8 rounded m-1 w-full ${selectedAnswer === index + 2
+                    className={`text-white font-bold py-8 px-8 m-1 w-full rounded-full ${selectedAnswer === index + 2
                       ? answerOption.isCorrect
                         ? 'bg-green-500'
                         : 'bg-red-700'
@@ -178,18 +196,18 @@ export default function App() {
                     disabled={selectedAnswer !== null}
                   >
                     {index === 0 && (
-                      <>
+                      <div className="flex justify-center">
                         <FaStar className="inline pr-2 pb-2 text-red-900" />
                         <FaStar className="inline pr-2 pb-2 text-red-900" />
-                      </>
+                      </div>
                     )}
                     {index === 1 && (
-                      <>
+                      <div className="flex justify-center">
                         <FaStar className="inline pr-2 pb-2 text-red-900" />
                         <FaStar className="inline pr-2 pb-2 text-red-900" />
                         <FaStar className="inline pr-2 pb-2 text-red-900" />
                         <FaStar className="inline pr-2 pb-2 text-red-900" />
-                      </>
+                      </div>
                     )}
                     {answerOption.answerText}
                   </button>
@@ -211,6 +229,6 @@ export default function App() {
           </div>
         </footer>
       </div>
-    </div>
+    </div >
   );
 }
