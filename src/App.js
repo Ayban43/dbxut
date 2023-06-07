@@ -100,43 +100,45 @@ export default function App() {
               </button>
             </div>
           </div>
-
         ) : showScore ? (
-
-          <div className='score-section text-center'>
-            <h2 className='text-xl font-bold mb-4'>Quiz Score</h2>
-            <p>
-              You scored {score} out of {questions.length}
-            </p>
-            <button
-              onClick={handleRetryClick}
-              className='bg-blue-300 text-white font-bold py-2 px-4 rounded m-1'
-            >
-              Retry
-            </button>
-          </div>
+          <>
+            <div className='score-section text-center h-screen grid items-center justify-center'>
+              <div>
+                <h2 className='text-8xl font-bold mb-4'>CONGRATULATIONS</h2>
+              </div>
+              <div className='grid'>
+                <span className='text-8xl'>SCORE</span>
+                <span className='text-9xl font-bold'>{score * 10}</span>
+                <p className='text-xl'>
+                  (You scored {score} out of {questions.length})
+                </p>
+              </div>
+              <button
+                onClick={handleRetryClick}
+                className='bg-blue-300 text-white font-bold py-2 px-4 rounded m-1 text-4xl'
+              >
+                RETRY
+              </button>
+            </div>
+          </>
         ) : (
-
           <div className="h-screen w-screen flex flex-col p-20">
-            <div className='question-section'>
-              <div className='flex-col timer justify-start text-4xl'>
+            <div className='question-section flex-1'>
+              <div className='flex-col timer justify-start text-4xl mb-20'>
                 Time: {time}s
               </div>
-              <div className='question-count'>
-                <span>Question {currentQuestion + 1}</span>/{questions.length}
+              <div className='question-text flex justify-center text-8xl items-center text-center'>{questions[currentQuestion].questionText}</div>
+              <div className='question-count flex justify-center items-center mt-5 text-xl font-semibold'>
+                <span>(Question {currentQuestion + 1}</span>/{questions.length})
               </div>
-
-              <div className='question-text flex justify-center text-8xl items-center'>{questions[currentQuestion].questionText}</div>
-
             </div>
-
-            <div className='answer-section grid grid-cols-2 gap-4'>
-              <div className='top-buttons'>
+            <div className=' answer-section grid grid-cols-2 gap-8 items-center justify-center flex-1 text-4xl'>
+              <div className='top-buttons grid gap-6'>
                 {questions[currentQuestion].answerOptions.slice(0, 2).map((answerOption, index) => (
                   <button
                     key={index}
                     onClick={() => handleAnswerOptionClick(answerOption, index)}
-                    className={`text-white font-bold py-2 px-4 rounded m-1 w-full ${selectedAnswer === index
+                    className={`text-white font-bold py-4 px-4 rounded m-1 w-full ${selectedAnswer === index
                       ? answerOption.isCorrect
                         ? 'bg-green-500'
                         : 'bg-red-500'
@@ -148,13 +150,12 @@ export default function App() {
                   </button>
                 ))}
               </div>
-
-              <div className='bottom-buttons'>
+              <div className='bottom-buttons grid gap-6'>
                 {questions[currentQuestion].answerOptions.slice(2).map((answerOption, index) => (
                   <button
                     key={index}
                     onClick={() => handleAnswerOptionClick(answerOption, index + 2)} // Adding an offset of 2 to the index
-                    className={`text-white font-bold py-2 px-4 rounded m-1 w-full ${selectedAnswer === index + 2
+                    className={`text-white font-bold py-4 px-4 rounded m-1 w-full ${selectedAnswer === index + 2
                       ? answerOption.isCorrect
                         ? 'bg-green-500'
                         : 'bg-red-500'
@@ -167,9 +168,19 @@ export default function App() {
                 ))}
               </div>
             </div>
-
           </div>
         )}
+        {/* ------------------------------- FLOATING FOOTER ------------------------------- */}
+        <footer
+          className="fixed bottom-0 left-0 w-full bg-orange-400 text-white text-center py-4 opacity-80"
+          style={{ zIndex: 999 }}
+        >
+          <div className="container mx-auto">
+            <p className="text-sm">
+              BIRD STUDIO/SHUEISHA, TOEI ANIMATION © 1984 Toei Animation Co., Ltd.
+            </p>
+          </div>
+        </footer>
       </div>
     </div>
   );
