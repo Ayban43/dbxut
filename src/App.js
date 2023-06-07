@@ -29,7 +29,7 @@ export default function App() {
 
   useEffect(() => {
     if (currentQuestion < shuffledQuestions.length) {
-      setTime(200); // Reset the timer for each question
+      setTime(20); // Reset the timer for each question
     }
   }, [currentQuestion, shuffledQuestions]);
 
