@@ -89,12 +89,12 @@ export default function App() {
         {showTitlePage ? (
           <div className='title-page text-center h-screen flex flex-col'>
             <div className="flex-1  flex justify-center items-center">
-              <h1 className='text-8xl font-bold mb-4 mt-44'>Dragon Ball Trivia Game</h1>
+              <h1 className='text-9xl font-bold mb-4 mt-44 text-center text-red-900'>Dragon Ball Trivia Game</h1>
             </div>
             <div className="flex-1 flex flex-col justify-center items-center mb-40">
               <button
                 onClick={handlePlayClick}
-                className='bg-blue-300 text-white text-4xl font-bold py-4 px-8 rounded-lg'
+                className='bg-orange-500 text-red-900 text-4xl font-bold py-4 px-8 rounded-lg'
               >
                 PLAY
               </button>
@@ -104,18 +104,18 @@ export default function App() {
           <>
             <div className='score-section text-center h-screen grid items-center justify-center'>
               <div>
-                <h2 className='text-8xl font-bold mb-4'>CONGRATULATIONS</h2>
+                <h2 className='text-8xl font-bold mb-4 text-red-900'>CONGRATULATIONS</h2>
               </div>
               <div className='grid'>
-                <span className='text-8xl'>SCORE</span>
-                <span className='text-9xl font-bold'>{score * 10}</span>
-                <p className='text-xl'>
+                <span className='text-7xl text-orange-400 font-semibold'>SCORE</span>
+                <span className='text-9xl font-extrabold text-red-950'>{score * 10}</span>
+                <p className='text-xl text-gray-700'>
                   (You scored {score} out of {questions.length})
                 </p>
               </div>
               <button
                 onClick={handleRetryClick}
-                className='bg-blue-300 text-white font-bold py-2 px-4 rounded m-1 text-4xl'
+                className='bg-orange-400 text-red-900 font-bold py-2 px-4 rounded m-1 text-4xl'
               >
                 RETRY
               </button>
@@ -127,7 +127,7 @@ export default function App() {
               <div className='flex-col timer justify-start text-4xl mb-20'>
                 Time: {time}s
               </div>
-              <div className='question-text flex justify-center text-8xl items-center text-center'>{questions[currentQuestion].questionText}</div>
+              <div className='question-text flex justify-center text-8xl items-center text-center text-red-950'>{questions[currentQuestion].questionText}</div>
               <div className='question-count flex justify-center items-center mt-5 text-xl font-semibold'>
                 <span>(Question {currentQuestion + 1}</span>/{questions.length})
               </div>
@@ -138,11 +138,11 @@ export default function App() {
                   <button
                     key={index}
                     onClick={() => handleAnswerOptionClick(answerOption, index)}
-                    className={`text-white font-bold py-4 px-4 rounded m-1 w-full ${selectedAnswer === index
+                    className={`text-red-900 font-bold py-4 px-4 rounded m-1 w-full ${selectedAnswer === index
                       ? answerOption.isCorrect
                         ? 'bg-green-500'
                         : 'bg-red-500'
-                      : 'bg-blue-300'
+                      : 'bg-orange-500'
                       }`}
                     disabled={selectedAnswer !== null}
                   >
@@ -155,14 +155,15 @@ export default function App() {
                   <button
                     key={index}
                     onClick={() => handleAnswerOptionClick(answerOption, index + 2)} // Adding an offset of 2 to the index
-                    className={`text-white font-bold py-4 px-4 rounded m-1 w-full ${selectedAnswer === index + 2
+                    className={`text-red-900 font-bold py-4 px-4 rounded m-1 w-full ${selectedAnswer === index + 2
                       ? answerOption.isCorrect
                         ? 'bg-green-500'
                         : 'bg-red-500'
-                      : 'bg-blue-300'
+                      : 'bg-orange-500'
                       }`}
                     disabled={selectedAnswer !== null}
                   >
+
                     {answerOption.answerText}
                   </button>
                 ))}
