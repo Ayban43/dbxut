@@ -108,7 +108,7 @@ export default function App() {
         {showTitlePage ? (
           <div className='title-page text-center h-screen flex flex-col'>
             <div className="flex-1  flex justify-center items-center">
-              <h1 className=' font-normal mb-4 mt-44 text-center text-red-900 font-dbz tracking-widest leading-none' style={{ fontSize: '11rem' }}><span className='text-yellow-400 drop-shadow-[5px_2px_4px_rgba(0,0,0,.9)]'>Dragon</span><span className='text-red-700 drop-shadow-[5px_2px_4px_rgba(255,240,0,1)]'>Ball</span> <br></br> <span className='pr-9'>Trivia</span><span>Game</span> </h1>
+              <h1 className=' font-normal mb-4 mt-44 text-center text-red-900 font-dbz tracking-widest leading-none' ><span className='text-yellow-400 drop-shadow-[5px_2px_4px_rgba(0,0,0,.9)] tracking-wider' style={{ fontSize: '15rem' }}>Dragon</span><span className='text-red-700 tracking-wider drop-shadow-[5px_2px_4px_rgba(0,0,0,.9)]' style={{ fontSize: '15rem' }}>Ball</span> <br></br> <span className='pr-9 drop-shadow-[2px_2px_2px_rgba(255,240,0,1)]' style={{ fontSize: '9rem' }}>Trivia</span><span className='drop-shadow-[2px_2px_2px_rgba(255,240,0,1)]' style={{ fontSize: '9rem' }}>Game</span> </h1>
             </div>
             <div className="flex-1 flex flex-col justify-center items-center mb-40">
 
@@ -117,10 +117,10 @@ export default function App() {
                 className='bg-orange-500 text-white text-5xl font-bold py-8 px-16 w-64 h-64 rounded-full border-2 border-red-600'
               >
                 <div className="flex justify-center">
-                  <FaStar className="inline text-red-900" />
-                  <FaStar className="inline text-red-900" />
-                  <FaStar className="inline text-red-900" />
-                  <FaStar className="inline text-red-900" />
+                  <FaStar className="inline text-red-900 drop-shadow-[2px_1px_1px_rgba(255,240,0,1)]" />
+                  <FaStar className="inline text-red-900 drop-shadow-[2px_1px_1px_rgba(255,240,0,1)]" />
+                  <FaStar className="inline text-red-900 drop-shadow-[2px_1px_1px_rgba(255,240,0,1)]" />
+                  <FaStar className="inline text-red-900 drop-shadow-[2px_1px_1px_rgba(255,240,0,1)]" />
                 </div>
                 PLAY
               </button>
@@ -142,10 +142,10 @@ export default function App() {
               <div>
                 <button
                   onClick={handleRetryClick}
-                  className='bg-orange-500 text-white font-bold py-4 px-6 m-1 text-4xl mb-40 h-44 w-44 rounded-full'
+                  className='bg-orange-500 text-white font-bold py-4 px-6 m-1 text-4xl mb-40 h-44 w-44 rounded-full border-2 border-red-600'
                 >
                   <div className="flex justify-center">
-                    <FaStar className="inline mb-2 text-red-900" />
+                    <FaStar className="inline mb-2 text-red-900 drop-shadow-[2px_1px_1px_rgba(255,240,0,1)]" />
                   </div>
                   RETRY
                 </button>
@@ -180,28 +180,28 @@ export default function App() {
                 >
                   {index === 0 && (
                     <div className="flex justify-center">
-                      <FaStar className="inline p-1 text-red-900" />
+                      <FaStar className="inline p-1 text-red-900 drop-shadow-[2px_1px_1px_rgba(255,240,0,1)]" />
                     </div>
                   )}
                   {index === 1 && (
                     <div className="flex justify-center">
-                      <FaStar className="inline p-1 text-red-900" />
-                      <FaStar className="inline p-1 text-red-900" />
+                      <FaStar className="inline p-1 text-red-900 drop-shadow-[2px_1px_1px_rgba(255,240,0,1)]" />
+                      <FaStar className="inline p-1 text-red-900 drop-shadow-[2px_1px_1px_rgba(255,240,0,1)]" />
                     </div>
                   )}
                   {index === 2 && (
                     <div className="flex justify-center">
-                      <FaStar className="inline p-1 text-red-900" />
-                      <FaStar className="inline p-1 text-red-900" />
-                      <FaStar className="inline p-1 text-red-900" />
+                      <FaStar className="inline p-1 text-red-900 drop-shadow-[2px_1px_1px_rgba(255,240,0,1)]" />
+                      <FaStar className="inline p-1 text-red-900 drop-shadow-[2px_1px_1px_rgba(255,240,0,1)]" />
+                      <FaStar className="inline p-1 text-red-900 drop-shadow-[2px_1px_1px_rgba(255,240,0,1)]" />
                     </div>
                   )}
                   {index === 3 && (
                     <div className="flex justify-center">
-                      <FaStar className="inline p-1 text-red-900" />
-                      <FaStar className="inline p-1 text-red-900" />
-                      <FaStar className="inline p-1 text-red-900" />
-                      <FaStar className="inline p-1 text-red-900" />
+                      <FaStar className="inline p-1 text-red-900 drop-shadow-[2px_1px_1px_rgba(255,240,0,1)]" />
+                      <FaStar className="inline p-1 text-red-900 drop-shadow-[2px_1px_1px_rgba(255,240,0,1)]" />
+                      <FaStar className="inline p-1 text-red-900 drop-shadow-[2px_1px_1px_rgba(255,240,0,1)]" />
+                      <FaStar className="inline p-1 text-red-900 drop-shadow-[2px_1px_1px_rgba(255,240,0,1)]" />
                     </div>
                   )}
                   {answerOption.answerText}
