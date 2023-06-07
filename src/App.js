@@ -145,7 +145,7 @@ export default function App() {
                   className='bg-orange-500 text-white font-bold py-4 px-6 m-1 text-4xl mb-40 h-44 w-44 rounded-full'
                 >
                   <div className="flex justify-center">
-                    <FaStar className="inline text-red-900" />
+                    <FaStar className="inline mb-2 text-red-900" />
                   </div>
                   RETRY
                 </button>
