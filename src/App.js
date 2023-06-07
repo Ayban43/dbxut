@@ -108,7 +108,7 @@ export default function App() {
         {showTitlePage ? (
           <div className='title-page text-center h-screen flex flex-col'>
             <div className="flex-1  flex justify-center items-center">
-              <h1 className=' font-normal mb-4 mt-44 text-center text-red-900 font-dbz tracking-widest leading-none' ><span className='text-yellow-400 drop-shadow-[5px_2px_4px_rgba(0,0,0,.9)] tracking-wider' style={{ fontSize: '15rem' }}>Dragon</span><span className='text-red-700 tracking-wider drop-shadow-[5px_2px_4px_rgba(0,0,0,.9)]' style={{ fontSize: '15rem' }}>Ball</span> <br></br> <span className='pr-9 drop-shadow-[2px_2px_2px_rgba(255,240,0,1)]' style={{ fontSize: '9rem' }}>Trivia</span><span className='drop-shadow-[2px_2px_2px_rgba(255,240,0,1)]' style={{ fontSize: '9rem' }}>Game</span> </h1>
+              <h1 className=' font-normal mb-4 mt-44 text-center text-red-900 font-dbz tracking-widest leading-none' ><span className='text-yellow-400 drop-shadow-[5px_2px_4px_rgba(0,0,0,.9)] tracking-wider' style={{ fontSize: '15rem' }}>Dragon</span><span className='text-red-700 tracking-wider drop-shadow-[5px_2px_4px_rgba(0,0,0,.9)]' style={{ fontSize: '15rem' }}>balL</span> <br></br> <span className='pr-9 drop-shadow-[2px_2px_2px_rgba(255,240,0,1)]' style={{ fontSize: '9rem' }}>Trivia</span><span className='drop-shadow-[2px_2px_2px_rgba(255,240,0,1)]' style={{ fontSize: '9rem' }}>Game</span> </h1>
             </div>
             <div className="flex-1 flex flex-col justify-center items-center mb-40">
 
