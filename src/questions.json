@@ -18,7 +18,7 @@
       ]
     },
     {
-      "questionText": "It is the second major plot arc of Dragon Ball Z series",
+      "questionText": "It is the second major plot arc of Dragon Ball Z series.",
       "answerOptions": [
         {"answerText": "Tenkaichi Budokai Arc", "isCorrect": false},
         {"answerText": "Frieza Arc", "isCorrect": true},
@@ -36,7 +36,7 @@
       ]
     },
     {
-        "questionText": "Literally means \"Strongest Under the Heavens Martial Arts Tournament Arc\"",
+        "questionText": "Literally means \"Strongest Under the Heavens Martial Arts Tournament Arc\".",
         "answerOptions": [
           {"answerText": "Tenkaichi Budokai Arc", "isCorrect": true},
           {"answerText": "Saiyan Arc", "isCorrect": false},
@@ -45,7 +45,7 @@
         ]
       },
       {
-        "questionText": "Also known as \"Artificial Humans Arc\", it is the eighth saga in the Dragon Ball Z series",
+        "questionText": "Also known as \"Artificial Humans Arc\", it is the eighth saga in the Dragon Ball Z series.",
         "answerOptions": [
           {"answerText": "Tenkaichi Budokai Arc", "isCorrect": false},
           {"answerText": "Saiyan Arc", "isCorrect": false},
