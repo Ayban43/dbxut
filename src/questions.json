@@ -9,7 +9,7 @@
       ]
     },
     {
-      "questionText": "In which arc did the character Vegito first appear in?",
+      "questionText": "In which arc did the character Vegeta first appear?",
       "answerOptions": [
         {"answerText": "Buu Arc", "isCorrect": true},
         {"answerText": "Saiyan Arc", "isCorrect": false},
@@ -27,7 +27,7 @@
       ]
     },
     {
-      "questionText": "Also known as Season 1, is the first season of the Dragon Ball Z series",
+      "questionText": "It is the first arc of the Dragon Ball Z series and marks the first appearance of the remaining Saiyans.",
       "answerOptions": [
         {"answerText": "Tenkaichi Budokai Arc", "isCorrect": false},
         {"answerText": "Saiyan Arc", "isCorrect": true},
@@ -60,6 +60,70 @@
           {"answerText": "Cell Arc", "isCorrect": true},
           {"answerText": "Android Arc", "isCorrect": false},
           {"answerText": "Son Goku Boy Arc", "isCorrect": false}
+        ]
+      },
+
+      {
+        "questionText": "What is the name of Son Goku's acquaintance in search of the dragon balls?",
+        "answerOptions": [
+          {"answerText": "Vegeta", "isCorrect": false},
+          {"answerText": "Bulma", "isCorrect": true},
+          {"answerText": "Goku", "isCorrect": false},
+          {"answerText": "Ryu", "isCorrect": false}
+        ]
+      },
+      {
+        "questionText": "Who is the student of Master Roshi and a friend of Goku who joined together in the Tenkaichi Budokai tournament?",
+        "answerOptions": [
+          {"answerText": "Krillin", "isCorrect": true},
+          {"answerText": "Cell", "isCorrect": false},
+          {"answerText": "Dr. Brief", "isCorrect": false},
+          {"answerText": "Trunks", "isCorrect": false}
+        ]
+      },
+      {
+        "questionText": "Who is the prince of Saiyan who Son Goku fought during the Saiyan arc?",
+        "answerOptions": [
+          {"answerText": "Kakkarot", "isCorrect": false},
+          {"answerText": "Dr. Gero", "isCorrect": false},
+          {"answerText": "Gohan", "isCorrect": false},
+          {"answerText": "Vegeta", "isCorrect": true}
+        ]
+      },
+      {
+        "questionText": "Who is the villain that Goku fought that introduced him as a super Saiyan?",
+        "answerOptions": [
+          {"answerText": "Frieza", "isCorrect": true},
+          {"answerText": "Majin Buu", "isCorrect": false},
+          {"answerText": "Tights", "isCorrect": false},
+          {"answerText": "Bulma", "isCorrect": false}
+        ]
+      },
+      {
+        "questionText": "Who is the scientist who created androids 16, 17, and 18?",
+        "answerOptions": [
+          {"answerText": "Dr. Brief", "isCorrect": false},
+          {"answerText": "Dr. Gero", "isCorrect": true},
+          {"answerText": "Dr. Nefario", "isCorrect": false},
+          {"answerText": "Dr. Bison", "isCorrect": false}
+        ]
+      },
+      {
+        "questionText": "Who defeated Cell? and is the oldest son of Goku?",
+        "answerOptions": [
+          {"answerText": "Son Gero", "isCorrect": false},
+          {"answerText": "Son Chahan", "isCorrect": false},
+          {"answerText": "Son Gohan", "isCorrect": true},
+          {"answerText": "Son Ryu", "isCorrect": false}
+        ]
+      },
+      {
+        "questionText": "What is the name of the villain, whom the Earth Force will fight after the Cell arc? This character was created by the mad wizard Bibidi?",
+        "answerOptions": [
+          {"answerText": "Majin Buu", "isCorrect": true},
+          {"answerText": "Bidibi", "isCorrect": false},
+          {"answerText": "Son Gohan", "isCorrect": false},
+          {"answerText": "Cell", "isCorrect": false}
         ]
       }
   ]

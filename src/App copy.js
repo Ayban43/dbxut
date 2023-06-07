@@ -20,40 +20,19 @@ export default function App() {
   const [score, setScore] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [showTitlePage, setShowTitlePage] = useState(true);
-  const [gameStarted, setGameStarted] = useState(false);
   const [time, setTime] = useState(20); // Timer in seconds
 
   useEffect(() => {
     const shuffled = shuffleArray(questionsData);
-    const selectedQuestions = shuffled.slice(0, 7); // Select only the first 7 questions
-    setQuestions(selectedQuestions);
-    setShuffledQuestions(selectedQuestions);
+    setQuestions(shuffled);
+    setShuffledQuestions(shuffled);
   }, []);
 
   useEffect(() => {
-    if (gameStarted) {
-      const timer = setTimeout(() => {
-        if (time === 0) {
-          handleAnswerOptionClick(null, -1); // Automatically select wrong answer
-        } else {
-          setTime(time - 1);
-        }
-      }, 1000);
-
-      return () => clearTimeout(timer); // Cleanup the timer when component unmounts or timer changes
-    }
-  }, [gameStarted, time]);
-
-  const handlePlayClick = () => {
-    setShowTitlePage(false);
-    setGameStarted(true);
-  };
-
-  useEffect(() => {
-    if (currentQuestion < shuffledQuestions.length && gameStarted) {
+    if (currentQuestion < shuffledQuestions.length) {
       setTime(20); // Reset the timer for each question
     }
-  }, [currentQuestion, shuffledQuestions, gameStarted]);
+  }, [currentQuestion, shuffledQuestions]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -67,6 +46,9 @@ export default function App() {
     return () => clearTimeout(timer); // Cleanup the timer when component unmounts or timer changes
   }, [time]);
 
+  const handlePlayClick = () => {
+    setShowTitlePage(false);
+  };
 
   const handleRetryClick = () => {
     setShowScore(false);
@@ -134,7 +116,7 @@ export default function App() {
               </div>
               <button
                 onClick={handleRetryClick}
-                className='bg-orange-500 text-white font-bold py-6 px-8 rounded m-1 text-4xl mx-52'
+                className='bg-orange-400 text-white font-bold py-4 px-8 rounded m-1 text-4xl'
               >
                 RETRY
               </button>
