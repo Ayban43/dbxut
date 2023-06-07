@@ -1,0 +1,66 @@
+[
+    {
+      "questionText": "He is introduced as an eccentric, monkey-tailed boy who practices martial arts and possesses superhuman strength?",
+      "answerOptions": [
+        {"answerText": "Saiyan", "isCorrect": false},
+        {"answerText": "Androids", "isCorrect": false},
+        {"answerText": "Buu", "isCorrect": false},
+        {"answerText": "Son Goku", "isCorrect": true}
+      ]
+    },
+    {
+      "questionText": "In which arc did the character Vegito first appear in?",
+      "answerOptions": [
+        {"answerText": "Buu Arc", "isCorrect": true},
+        {"answerText": "Saiyan Arc", "isCorrect": false},
+        {"answerText": "Androids Arc", "isCorrect": false},
+        {"answerText": "Son Goku Boy Arc", "isCorrect": false}
+      ]
+    },
+    {
+      "questionText": "It is the second major plot arc of Dragon Ball Z series",
+      "answerOptions": [
+        {"answerText": "Tenkaichi Budokai Arc", "isCorrect": false},
+        {"answerText": "Frieza Arc", "isCorrect": true},
+        {"answerText": "Android Arc", "isCorrect": false},
+        {"answerText": "Son Goku Boy Arc", "isCorrect": false}
+      ]
+    },
+    {
+      "questionText": "Also known as Season 1, is the first season of the Dragon Ball Z series",
+      "answerOptions": [
+        {"answerText": "Tenkaichi Budokai Arc", "isCorrect": false},
+        {"answerText": "Saiyan Arc", "isCorrect": true},
+        {"answerText": "Android Arc", "isCorrect": false},
+        {"answerText": "Son Goku Boy Arc", "isCorrect": false}
+      ]
+    },
+    {
+        "questionText": "Literally means \"Strongest Under the Heavens Martial Arts Tournament Arc\"",
+        "answerOptions": [
+          {"answerText": "Tenkaichi Budokai Arc", "isCorrect": true},
+          {"answerText": "Saiyan Arc", "isCorrect": false},
+          {"answerText": "Android Arc", "isCorrect": false},
+          {"answerText": "Son Goku Boy Arc", "isCorrect": false}
+        ]
+      },
+      {
+        "questionText": "Also known as \"Artificial Humans Arc\", it is the eighth saga in the Dragon Ball Z series",
+        "answerOptions": [
+          {"answerText": "Tenkaichi Budokai Arc", "isCorrect": false},
+          {"answerText": "Saiyan Arc", "isCorrect": false},
+          {"answerText": "Android Arc", "isCorrect": true},
+          {"answerText": "Son Goku Boy Arc", "isCorrect": false}
+        ]
+      },
+      {
+        "questionText": "In this saga, Goku admits that he was holding back at first only using 80% of his real power which would put Goku's Battle power at 4.8 Quadrillion.",
+        "answerOptions": [
+          {"answerText": "Tenkaichi Budokai Arc", "isCorrect": false},
+          {"answerText": "Cell Arc", "isCorrect": true},
+          {"answerText": "Android Arc", "isCorrect": false},
+          {"answerText": "Son Goku Boy Arc", "isCorrect": false}
+        ]
+      }
+  ]
+  
