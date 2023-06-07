@@ -108,7 +108,7 @@ export default function App() {
         {showTitlePage ? (
           <div className='title-page text-center h-screen flex flex-col'>
             <div className="flex-1  flex justify-center items-center">
-              <h1 className=' font-normal mb-4 mt-44 text-center text-red-900 font-dbz tracking-widest leading-none' style={{ fontSize: '11rem' }}><span className='text-yellow-400 drop-shadow-[5px_2px_4px_rgba(0,0,0,.9)]'>Dragon</span><span className='drop-shadow-[5px_2px_4px_rgba(255,240,0,1)]'>Ball</span> <br></br> <span className='pr-9'>Trivia</span><span>Game</span> </h1>
+              <h1 className=' font-normal mb-4 mt-44 text-center text-red-900 font-dbz tracking-widest leading-none' style={{ fontSize: '11rem' }}><span className='text-yellow-400 drop-shadow-[5px_2px_4px_rgba(0,0,0,.9)]'>Dragon</span><span className='text-red-700 drop-shadow-[5px_2px_4px_rgba(255,240,0,1)]'>Ball</span> <br></br> <span className='pr-9'>Trivia</span><span>Game</span> </h1>
             </div>
             <div className="flex-1 flex flex-col justify-center items-center mb-40">
 
@@ -139,12 +139,18 @@ export default function App() {
                   (You scored {score} out of {questions.length})
                 </p>
               </div>
-              <button
-                onClick={handleRetryClick}
-                className='bg-orange-500 text-white font-bold py-4 px-6 rounded m-1 text-4xl mx-80 mb-40'
-              >
-                RETRY
-              </button>
+              <div>
+                <button
+                  onClick={handleRetryClick}
+                  className='bg-orange-500 text-white font-bold py-4 px-6 m-1 text-4xl mb-40 h-44 w-44 rounded-full'
+                >
+                  <div className="flex justify-center">
+                    <FaStar className="inline text-red-900" />
+                  </div>
+                  RETRY
+                </button>
+              </div>
+
             </div>
           </>
         ) : (
