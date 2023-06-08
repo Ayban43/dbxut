@@ -124,11 +124,11 @@ export default function App() {
           <>
             <div className='score-section text-center h-screen grid items-center justify-center'>
               <div>
-                <h2 className=' mt-20 text-red-900 font-dbz tex tracking-wide drop-shadow-[1px_2px_2px_rgba(0,0,0,1)]' style={{ fontSize: '10rem' }}>CONGRATULATIONS</h2>
+                <h2 className=' mt-20 text-red-900 font-dbz tex tracking-wide drop-shadow-[1px_2px_2px_rgba(0,0,0,1)]' style={{ fontSize: '8rem' }}>CONGRATULATIONS</h2>
               </div>
               <div className='grid leading-none '>
                 <span className='text-7xl text-orange-500 font-semibold drop-shadow-[2px_2px_2px_rgba(0,0,0,.9)]'>SCORE</span>
-                <span className='font-bold text-red-950 mb-10 drop-shadow-[2px_2px_2px_rgba(255,234,0,1)]' style={{ fontSize: '18rem' }}>{score * 10}</span>
+                <span className='font-bold text-red-950 mb-10 drop-shadow-[2px_2px_2px_rgba(255,255,255,1)]' style={{ fontSize: '18rem' }}>{score * 10}</span>
                 <p className='text-xl text-gray-700'>
                   (You scored {score} out of {questions.length})
                 </p>
