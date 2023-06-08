@@ -108,20 +108,14 @@ export default function App() {
         {showTitlePage ? (
           <div className='title-page text-center h-screen flex flex-col'>
             <div className="flex-1  flex justify-center items-center">
-              <h1 className=' font-normal mb-4 mt-44 text-center text-red-900 font-dbz tracking-widest leading-none' ><span className='text-yellow-400 drop-shadow-[5px_2px_4px_rgba(0,0,0,.9)] tracking-wider' style={{ fontSize: '15rem' }}>Dragon</span><span className='text-red-700 tracking-wider drop-shadow-[5px_2px_4px_rgba(0,0,0,.9)]' style={{ fontSize: '15rem' }}>balL</span> <br></br> <span className='pr-9 drop-shadow-[2px_2px_2px_rgba(255,240,0,1)]' style={{ fontSize: '9rem' }}>Trivia</span><span className='drop-shadow-[2px_2px_2px_rgba(255,240,0,1)]' style={{ fontSize: '9rem' }}>Game</span> </h1>
+              <h1 className=' font-normal mb-4 mt-44 text-center text-red-900 font-dbz tracking-widest leading-none' ><span className='text-yellow-400 drop-shadow-[5px_2px_4px_rgba(0,0,0,.9)] tracking-wider' style={{ fontSize: '12rem' }}>Dragon</span><span className='text-red-700 tracking-wider drop-shadow-[5px_2px_4px_rgba(0,0,0,.9)]' style={{ fontSize: '12rem' }}>balL</span> <br></br> <span className='pr-9 drop-shadow-[2px_2px_2px_rgba(255,240,0,1)]' style={{ fontSize: '8rem' }}>Trivia</span><span className='drop-shadow-[2px_2px_2px_rgba(255,240,0,1)]' style={{ fontSize: '8rem' }}>Game</span> </h1>
             </div>
             <div className="flex-1 flex flex-col justify-center items-center mb-40">
 
               <button
                 onClick={handlePlayClick}
-                className='bg-orange-500 text-white text-5xl font-bold py-8 px-16 w-64 h-64 rounded-full border-2 border-red-600'
+                className='bg-orange-500 text-white font-mono tracking-wide text-5xl font-bold py-8 px-16 rounded-full border-2 border-red-500 drop-shadow-[1px_2px_2px_rgba(111,6,6,1)]'
               >
-                <div className="flex justify-center">
-                  <FaStar className="inline text-red-900 drop-shadow-[2px_1px_1px_rgba(255,240,0,1)]" />
-                  <FaStar className="inline text-red-900 drop-shadow-[2px_1px_1px_rgba(255,240,0,1)]" />
-                  <FaStar className="inline text-red-900 drop-shadow-[2px_1px_1px_rgba(255,240,0,1)]" />
-                  <FaStar className="inline text-red-900 drop-shadow-[2px_1px_1px_rgba(255,240,0,1)]" />
-                </div>
                 PLAY
               </button>
             </div>
@@ -130,11 +124,11 @@ export default function App() {
           <>
             <div className='score-section text-center h-screen grid items-center justify-center'>
               <div>
-                <h2 className=' mt-20 text-red-900 font-dbz tex tracking-wide' style={{ fontSize: '10rem' }}>CONGRATULATIONS</h2>
+                <h2 className=' mt-20 text-red-900 font-dbz tex tracking-wide drop-shadow-[1px_2px_2px_rgba(0,0,0,1)]' style={{ fontSize: '10rem' }}>CONGRATULATIONS</h2>
               </div>
-              <div className='grid leading-none'>
-                <span className='text-7xl text-orange-500 font-semibold'>SCORE</span>
-                <span className='font-bold text-red-950 mb-10' style={{ fontSize: '18rem' }}>{score * 10}</span>
+              <div className='grid leading-none '>
+                <span className='text-7xl text-orange-500 font-semibold drop-shadow-[2px_2px_2px_rgba(0,0,0,.9)]'>SCORE</span>
+                <span className='font-bold text-red-950 mb-10 drop-shadow-[2px_2px_2px_rgba(255,234,0,1)]' style={{ fontSize: '18rem' }}>{score * 10}</span>
                 <p className='text-xl text-gray-700'>
                   (You scored {score} out of {questions.length})
                 </p>
@@ -142,11 +136,8 @@ export default function App() {
               <div>
                 <button
                   onClick={handleRetryClick}
-                  className='bg-orange-500 text-white font-bold py-4 px-6 m-1 text-4xl mb-40 h-44 w-44 rounded-full border-2 border-red-600'
+                  className='bg-orange-500 text-white font-mono font-bold py-8 px-10 tracking-wide m-1 text-5xl mb-40 rounded-full border-2 border-red-600 drop-shadow-[1px_2px_2px_rgba(111,6,6,1)]'
                 >
-                  <div className="flex justify-center">
-                    <FaStar className="inline mb-2 text-red-900 drop-shadow-[2px_1px_1px_rgba(255,240,0,1)]" />
-                  </div>
                   RETRY
                 </button>
               </div>
@@ -154,59 +145,52 @@ export default function App() {
             </div>
           </>
         ) : (
-          <div className="h-screen w-screen flex flex-col p-20">
+          <div className="h-screen w-screen flex flex-col p-20 ">
             <div className='question-section flex-1 grid items-center justify-center'>
-              <div className='flex-col timer justify-start text-4xl'>
+              <div className='flex-col timer justify-start text-4xl font-semibold font-mono pb-20 drop-shadow-[1px_1px_1px_rgba(255,255,255,1)]'>
                 Time: {time}s
               </div>
-              <div className='question-text flex justify-between text-7xl text-center text-red-950 tracking-tight font-bold leading-tight font-mono'>{questions[currentQuestion].questionText}</div>
+              <div className='question-text flex justify-between text-7xl text-center text-red-950 tracking-tight font-bold leading-tight font-mono drop-shadow-[2px_2px_1px_rgba(255,255,255,1)]'>{questions[currentQuestion].questionText}</div>
               <div className='question-count flex justify-center items-center pb-40 text-xl font-semibold'>
                 (Question {currentQuestion + 1}/{questions.length})
               </div>
             </div>
 
-            <div className='answer-section flex justify-center items-center text-4xl px-36 gap-12 mb-56'>
-              {questions[currentQuestion].answerOptions.map((answerOption, index) => (
-                <button
-                  key={index}
-                  onClick={() => handleAnswerOptionClick(answerOption, index)}
-                  className={`text-white font-bold rounded-full m-1 w-64 h-64 p-5 border-red-700 border-2 hover:opacity-90 ${selectedAnswer === index
-                    ? answerOption.isCorrect
-                      ? 'bg-green-500'
-                      : 'bg-red-700'
-                    : 'bg-orange-500'
-                    }`}
-                  disabled={selectedAnswer !== null}
-                >
-                  {index === 0 && (
-                    <div className="flex justify-center">
-                      <FaStar className="inline p-1 text-red-900 drop-shadow-[2px_1px_1px_rgba(255,240,0,1)]" />
-                    </div>
-                  )}
-                  {index === 1 && (
-                    <div className="flex justify-center">
-                      <FaStar className="inline p-1 text-red-900 drop-shadow-[2px_1px_1px_rgba(255,240,0,1)]" />
-                      <FaStar className="inline p-1 text-red-900 drop-shadow-[2px_1px_1px_rgba(255,240,0,1)]" />
-                    </div>
-                  )}
-                  {index === 2 && (
-                    <div className="flex justify-center">
-                      <FaStar className="inline p-1 text-red-900 drop-shadow-[2px_1px_1px_rgba(255,240,0,1)]" />
-                      <FaStar className="inline p-1 text-red-900 drop-shadow-[2px_1px_1px_rgba(255,240,0,1)]" />
-                      <FaStar className="inline p-1 text-red-900 drop-shadow-[2px_1px_1px_rgba(255,240,0,1)]" />
-                    </div>
-                  )}
-                  {index === 3 && (
-                    <div className="flex justify-center">
-                      <FaStar className="inline p-1 text-red-900 drop-shadow-[2px_1px_1px_rgba(255,240,0,1)]" />
-                      <FaStar className="inline p-1 text-red-900 drop-shadow-[2px_1px_1px_rgba(255,240,0,1)]" />
-                      <FaStar className="inline p-1 text-red-900 drop-shadow-[2px_1px_1px_rgba(255,240,0,1)]" />
-                      <FaStar className="inline p-1 text-red-900 drop-shadow-[2px_1px_1px_rgba(255,240,0,1)]" />
-                    </div>
-                  )}
-                  {answerOption.answerText}
-                </button>
-              ))}
+            <div className='answer-section grid grid-cols-2 gap-16 items-center justify-center flex-1 text-4xl px-36'>
+              <div className='top-buttons grid gap-12'>
+                {questions[currentQuestion].answerOptions.slice(0, 2).map((answerOption, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleAnswerOptionClick(answerOption, index)}
+                    className={`text-white font-bold font-mono tracking-wide py-8 px-8 rounded-full m-1 w-full grid border-2 border-red-500 drop-shadow-[1px_2px_2px_rgba(111,6,6,1)] ${selectedAnswer === index
+                      ? answerOption.isCorrect
+                        ? 'bg-green-500'
+                        : 'bg-red-700'
+                      : 'bg-orange-500'
+                      }`}
+                    disabled={selectedAnswer !== null}
+                  >
+                    {answerOption.answerText}
+                  </button>
+                ))}
+              </div>
+              <div className='bottom-buttons grid gap-12'>
+                {questions[currentQuestion].answerOptions.slice(2).map((answerOption, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleAnswerOptionClick(answerOption, index + 2)} // Adding an offset of 2 to the index
+                    className={`text-white font-bold font-mono tracking-wide py-8 px-8 m-1 w-full rounded-full border-2 border-red-500 drop-shadow-[1px_2px_2px_rgba(111,6,6,1)] ${selectedAnswer === index + 2
+                      ? answerOption.isCorrect
+                        ? 'bg-green-500'
+                        : 'bg-red-700'
+                      : 'bg-orange-500'
+                      }`}
+                    disabled={selectedAnswer !== null}
+                  >
+                    {answerOption.answerText}
+                  </button>
+                ))}
+              </div>
             </div>
 
 
